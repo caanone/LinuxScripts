@@ -20,10 +20,10 @@ done
 echo "${kerbadminpass}" | kinit $kerbadminusername@$kerbrealmname >:
 randgenpass=$( ipa user-add $username --first=USER --last=LUSER --random | \
 sed -n 's/Random password: \(.*\)/\1/p' | sed 's/^[ \t]*//;s/[ \t]*$//') >:
+
 echo -e  "${randgenpass}\n${password}\n${password}"  | kinit $username@$kerbrealmname >:
 kliststr=$(klist)
 createduser=$(echo -e  "Created ${kliststr}" | sed -n 's/Default principal: \(.*\)/\1/p' )
 echo "LDAP user $createduser created successfully" 
 echo "Username: $username , Password: $password"
-
 kdestroy -A
