@@ -25,4 +25,5 @@ kliststr=$(klist)
 createduser=$(echo -e  "Created ${kliststr}" | sed -n 's/Default principal: \(.*\)/\1/p' )
 echo "LDAP user $createduser created successfully" 
 echo "Username: $username , Password: $password"
+
 kdestroy -A
