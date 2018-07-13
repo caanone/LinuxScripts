@@ -1,7 +1,7 @@
 #!/bin/bash
 
 kerbadminusername="ipausercreator"
-kerbadminpass="ipausercreator password"
+kerbadminpass="ipausercreatorpassword"
 username=test
 password=$(pwgen 12 1 -A -0)
 kerbrealmname="LOC.LOCAL"
